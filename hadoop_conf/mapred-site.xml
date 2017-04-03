@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+
+<property>
+<name>mapreduce.framework.name</name>
+<value>yarn</value>
+</property>
+
+<property>
+<name>mapreduce.jobtracker.address</name>
+<value>master:9001</value>
+</property> 
+
+<property>
+<name>mapreduce.jobtracker.http.address</name>
+<value>master:50030</value>
+</property>  
+
+<property>
+<name>mapreduce.jobhistory.address</name>
+<value>master:10020</value>
+</property>
+
+
+<property>
+<name>mapreduce.jobhistory.webapp.address</name>
+<value>master:19888</value>
+</property>
+
+
+<property>
+<name>mapreduce.jobhistory.done-dir</name>
+<value>/hadoop/mapreduce/jobhistory/history/done</value>
+</property>
+          
+<property>
+<name>mapreduce.jobhistory.intermediate-done-dir</name>
+<value>/hadoop/mapreduce/jobhistory/history/done_intermediate</value>
+</property>
+          
+<property>
+<name>yarn.app.mapreduce.am.staging-dir</name>
+<value>/hadoop/hadoop-yarn/staging</value>
+</property>
+
+<property>
+<name>mapred.hosts.exclude</name>
+<value>/home/hadoop/MyCloudera/APP/hadoop/hadoop/etc/hadoop/excludes</value>
+<final>true</final>
+</property>
+
+
+
+
+<property>
+<name>mapreduce.tasktracker.map.tasks.maximum</name>
+<value>32</value>
+<description> 同一时间允许运行的最大map任务数 </description>
+</property>
+<property>
+<name>mapreduce.tasktracker.reduce.tasks.maximum</name>
+<value>16</value>
+<description> 同一时间允许运行的最大reduce任务数 </description>
+</property>
+
+
+
+<property>
+<name>yarn.nodemanager.resource.memory-mb</name>
+<value>1000</value>
+</property>
+<property>
+<name>mapreduce.map.memory.mb</name>
+<value>512</value>
+<description>map阶段申请的container的内存的大小</description> 
+</property>
+
+
+<property>
+<name>mapreduce.reduce.memory.mb</name>
+<value>512</value>
+<description>reduce阶段申请的container的内存的大小</description>
+</property>
+
+
+<property>
+<name>mapreduce.map.java.opts</name>
+<value>-Xmx512M</value>
+<description>用户设定的map/reduce阶段申请的container的JVM参数。最大堆设定要比申请的内存少一些，用于JVM的非堆部分使用。 </description>
+</property>
+<property>
+<name>mapreduce.reduce.java.opts</name>
+<value>-Xmx1024M</value>
+</property>
+<property>
+<name>mapreduce.task.io.sort.mb</name>
+<value>1024</value>
+</property>
+<property>
+<name>mapreduce.reduce.shuffle.parallelcopies</name>
+<value>16</value>
+
+</property>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</configuration>
